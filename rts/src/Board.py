@@ -6,13 +6,6 @@ import numpy as np
 sys.path.append('../..')
 from rts.src.config import d_a_type, d_acts, A_TYPE_IDX, P_NAME_IDX, CARRY_IDX, MONEY_IDX, NUM_ACTS, ACTS_REV, NUM_ENCODERS, HEALTH_IDX, TIME_IDX
 
-"""
-Board.py
-
-Defines game rules (action checking, end-game conditions)
-can_execute_move is checking if move can be executed and execute_move is applying this move to new board
-"""
-
 
 class Board:
 

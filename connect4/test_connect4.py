@@ -97,7 +97,7 @@ def test_symmetries():
 def test_game_ended():
     """Tests game end detection logic based on fixed boards."""
     array_end_state_pairs = [
-        (np.array([[0, 0, 0, 0, 0, 0, 0],
+        (np.array([[0, 0, 0, 0, 0, 1, 0],
                    [0, 0, 0, 0, 0, 0, 0],
                    [0, 0, 0, 0, 0, 0, 0],
                    [0, 0, 0, 0, 0, 0, 0],

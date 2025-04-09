@@ -3,7 +3,7 @@ import math
 
 import numpy as np
 
-EPS = 1e-8
+EPS = 1e-3
 
 log = logging.getLogger(__name__)
 
@@ -25,6 +25,8 @@ class MCTS():
         self.Es = {}  # stores game.getGameEnded ended for board s
         self.Vs = {}  # stores game.getValidMoves for board s
 
+
+    #TODO idk
     def getActionProb(self, canonicalBoard, temp=1):
         """
         This function performs numMCTSSims simulations of MCTS starting from
@@ -115,8 +117,9 @@ class MCTS():
                     u = self.args.cpuct * self.Ps[s][a] * math.sqrt(self.Ns[s] + EPS)  # Q = 0 ?
 
                 if u > cur_best:
-                    cur_best = u
                     best_act = a
+                    cur_best = u
+                    
 
         a = best_act
         next_s, next_player = self.game.getNextState(canonicalBoard, 1, a)
@@ -126,11 +129,11 @@ class MCTS():
 
         if (s, a) in self.Qsa:
             self.Qsa[(s, a)] = (self.Nsa[(s, a)] * self.Qsa[(s, a)] + v) / (self.Nsa[(s, a)] + 1)
-            self.Nsa[(s, a)] += 1
+            self.Nsa[(s, a)] = self.Nsa[(s, a)] + 1
 
         else:
             self.Qsa[(s, a)] = v
             self.Nsa[(s, a)] = 1
 
-        self.Ns[s] += 1
+        self.Ns[s] = self.Ns[s] + 1
         return -v
