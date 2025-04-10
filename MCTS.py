@@ -66,10 +66,6 @@ class MCTS():
         outcome is propagated up the search path. The values of Ns, Nsa, Qsa are
         updated.
 
-        NOTE: the return values are the negative of the value of the current
-        state. This is done since v is in [-1,1] and if v is the value of a
-        state for the current player, then its value is -v for the other player.
-
         Returns:
             v: the negative of the value of the current canonicalBoard
         """
