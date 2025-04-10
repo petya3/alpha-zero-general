@@ -37,7 +37,7 @@ class NeuralNet():
         pass
 
     def save_checkpoint(self, folder, filename):
-       print("dummy")
+       print("dummy! yesyes")
 
     def load_checkpoint(self, folder, filename):
         """
